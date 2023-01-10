@@ -22,10 +22,15 @@ private:
 	/* data */
 public:
 	ShrubberyCreationForm(/* args */);
-	ShrubberyCreationForm(std::string);
+	ShrubberyCreationForm(const std::string);
+	ShrubberyCreationForm(const ShrubberyCreationForm& from);
 	~ShrubberyCreationForm();
+
+	ShrubberyCreationForm&	operator=(const ShrubberyCreationForm& from);
 
 	virtual void	execin() const;
 };
+
+std::ostream	&operator<<(std::ostream& os, const ShrubberyCreationForm& from);
 
 #endif

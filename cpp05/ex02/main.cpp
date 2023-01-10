@@ -47,5 +47,9 @@ int	main(void)
 
 	//testing surcharge operator
 	std::cout << Albert;
+
+	ShrubberyCreationForm	test;
+	test = jardin;
+	std::cout << test << std::endl;
 	return (0);
 }

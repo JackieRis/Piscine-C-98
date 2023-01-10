@@ -24,10 +24,14 @@ private:
 public:
 	RobotomyRequestForm(/* args */);
 	RobotomyRequestForm(std::string _name);
+	RobotomyRequestForm(const RobotomyRequestForm& from);
 	~RobotomyRequestForm();
+
+	RobotomyRequestForm&	operator=(const RobotomyRequestForm& from);
 	
 	virtual void	execin() const;
 };
 
+std::ostream&	operator<<(std::ostream& os, const RobotomyRequestForm& from);
 
 #endif

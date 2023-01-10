@@ -24,7 +24,7 @@ private:
 	bool				signature;
 	const int			gradeToSign;
 	const int			gradeToExec;
-	const std::string	target;
+	std::string			target;
 public:
 	Form(/* args */);
 	Form(const std::string _name, const int, const int, const std::string _target);
@@ -59,6 +59,12 @@ public:
 	bool		getSignature()const;
 	int			getToSign()const;
 	int			getToExec()const;
+
+	//setter
+	void	setSignature(const bool sign);
+	void	setTarget(const std::string targ);
+
+	Form&	operator=(const Form& from);
 
 	void	execute(Bureaucrat const & executor) const;
 	virtual void	execin() const;
