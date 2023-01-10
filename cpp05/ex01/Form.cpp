@@ -33,6 +33,15 @@ Form::Form(const Form& from): name(from.name), signature(from.signature), gradeT
 	std::cout << "Copy constructor called.\n";
 }
 
+Form &Form::operator=(const Form& from)
+{
+	std::cout << "Copy assignement operator called\n";
+	if (this == &from)
+		return *this;
+	this->signature = from.signature;
+	return *this;
+}
+
 //exception
 const char* Form::GradeTooHighException::what()const throw()
 {

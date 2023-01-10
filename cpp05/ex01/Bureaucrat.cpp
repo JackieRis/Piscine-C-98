@@ -24,11 +24,9 @@ Bureaucrat::Bureaucrat(const std::string _name, int _grade): name(_name), grade(
 	std::cout << name << " bureaucrat hired, " << grade << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& from)
+Bureaucrat::Bureaucrat(const Bureaucrat& from): name(from.name), grade(from.grade)
 {
 	std::cout << "Copy constructor called.\n";
-	this->name = from.name;
-	this->grade = from.grade;
 }
 
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& from)
@@ -36,7 +34,6 @@ Bureaucrat&	Bureaucrat::operator=(const Bureaucrat& from)
 	std::cout << "Copy assignement operator called.\n";
 	if (this == &from)
 		return (*this);
-	this->name = from.name;
 	this->grade = from.grade;
 	return (*this);
 }
