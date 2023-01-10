@@ -12,12 +12,12 @@
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(): Form("Presidential Pardon Form.", 25, 5, "default")
+PresidentialPardonForm::PresidentialPardonForm(): Form("Presidential Pardon Form", 25, 5, "default")
 {
 	std::cout << "Presidential pardon form created.\n";
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target): Form("Presidential Pardon Form.", 25, 5, target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target): Form("Presidential Pardon Form", 25, 5, target)
 {
 	std::cout << "Presidential pardon form created.\n";
 }

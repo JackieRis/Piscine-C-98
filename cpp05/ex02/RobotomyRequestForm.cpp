@@ -12,12 +12,12 @@
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(): Form("Robotomy Creation Form.", 72, 45, "Default")
+RobotomyRequestForm::RobotomyRequestForm(): Form("Robotomy Creation Form", 72, 45, "Default")
 {
 	std::cout << "Robotomy form created.\n";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target): Form("Robotomy Creation Form.", 72, 45, target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target): Form("Robotomy Creation Form", 72, 45, target)
 {
 	std::cout << "Bruit de perceuse.\n";
 }
