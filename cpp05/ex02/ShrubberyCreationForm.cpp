@@ -43,7 +43,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& from):
 
 void	ShrubberyCreationForm::execin() const
 {
-	std::fstream outfile(this->getTarget() + "_shrubbery");
+	std::ofstream outfile(this->getTarget() + "_shrubbery");
 
 	for (size_t i = 0; i < 10; i++)
 	{

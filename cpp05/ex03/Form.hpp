@@ -6,7 +6,7 @@
 /*   By: tnguyen- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 02:26:23 by tnguyen-          #+#    #+#             */
-/*   Updated: 2022/07/27 10:29:52 by tnguyen-         ###   ########.fr       */
+/*   Updated: 2022/07/21 00:20:36 by tnguyen-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ private:
 	bool				signature;
 	const int			gradeToSign;
 	const int			gradeToExec;
-	const std::string	target;
+	std::string			target;
 public:
-	//costructor
 	Form(/* args */);
 	Form(const std::string _name, const int, const int, const std::string _target);
 	Form(const Form& from);
@@ -61,9 +60,14 @@ public:
 	int			getToSign()const;
 	int			getToExec()const;
 
+	//setter
+	void	setSignature(const bool sign);
+	void	setTarget(const std::string targ);
+
+	Form&	operator=(const Form& from);
+
 	void	execute(Bureaucrat const & executor) const;
 	virtual void	execin() const;
-
 	//void	executeForm(const RobotomyRequestForm& form);
 	//void	executeForm(const PresidentialPardonForm& form);
 	void	beSigned(Bureaucrat const& n);

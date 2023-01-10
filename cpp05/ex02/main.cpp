@@ -41,6 +41,7 @@ int	main(void)
 	Kevin.executeForm(jardin);
 	Kevin.signForm(jardin);
 	Albert.signForm(jardin);
+	Kevin.executeForm(jardin);
 	std::cout << std::endl;
 
 	std::cout << "------- Presidential Form -------\n" << std::endl;

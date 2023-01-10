@@ -26,14 +26,19 @@ const std::string g_tree[] =
 "     \\/ ._\\//_/__/  ,\\__//__\\/.  \\_//__/_"
 };
 
-ShrubberyCreationForm::ShrubberyCreationForm(): Form("Shrubbery Creation Form.", 145, 137, "default")
+ShrubberyCreationForm::ShrubberyCreationForm(): Form("Shrubbery Creation Form", 145, 137, "default")
 {
 	std::cout << "Shrubbery form created.\n";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form("Shrubbery Creation Form.", 145, 137, target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string target): Form("Shrubbery Creation Form", 145, 137, target)
 {
 	std::cout << "Shrubbery form created.\n";
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& from): Form(from.getName(),from.getToSign(),from.getToExec(),from.getTarget())
+{
+	std::cout << "Copy constructor called\n";
 }
 
 void	ShrubberyCreationForm::execin() const
@@ -45,6 +50,29 @@ void	ShrubberyCreationForm::execin() const
 		outfile << g_tree[i] << std::endl;
 	}
 	outfile.close();
+}
+
+ShrubberyCreationForm&	ShrubberyCreationForm::operator=(const ShrubberyCreationForm& from)
+{
+	std::cout << "Copy assignement operator called\n";
+	if (this == &from)
+		return *this;
+	this->setSignature(from.getSignature());
+	this->setTarget(from.getTarget());
+	return *this;
+}
+
+std::ostream	&operator<<(std::ostream& os, const ShrubberyCreationForm& from)
+{
+	os << from.getName() << ", is a form to add trees in your life, required grade " << from.getToSign() \
+	<< " to get signed and grade " << from.getToExec() << " to execute it.\n";
+	if (from.getSignature() == true)
+	{	
+		os << "Form is already signed. Target was " << from.getTarget() << ".";
+		return os;
+	}
+	os << "Form isn't signed yet ! Actual target is " << from.getTarget() << ".";
+	return os;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm()

@@ -22,9 +22,14 @@ private:
 public:
 	PresidentialPardonForm(/* args */);
 	PresidentialPardonForm(std::string _name);
+	PresidentialPardonForm(const PresidentialPardonForm& from);
 	~PresidentialPardonForm();
+
+	PresidentialPardonForm&	operator=(const PresidentialPardonForm& from);
 
 	virtual void	execin() const;
 };
+
+std::ostream&	operator<<(std::ostream& os, const PresidentialPardonForm& from);
 
 #endif

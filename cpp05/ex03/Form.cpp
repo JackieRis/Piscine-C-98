@@ -12,7 +12,7 @@
 
 #include "Form.hpp"
 
-Form::Form(): name("defautlt"), signature(false), gradeToSign(75), gradeToExec(75)
+Form::Form(): name("default"), signature(false), gradeToSign(75), gradeToExec(75)
 {
 	std::cout << "Form created.\n";
 }
@@ -58,6 +58,19 @@ std::string	Form::getTarget()const{return(this->target);}
 bool		Form::getSignature()const{return(this->signature);}
 int			Form::getToSign()const{return(this->gradeToSign);}
 int			Form::getToExec()const{return(this->gradeToExec);}
+
+//setter
+void	Form::setSignature(const bool sign){this->signature = sign;}
+void	Form::setTarget(const std::string targ){this->target = targ;}
+
+Form	&Form::operator=(const Form& from)
+{
+	std::cout << "Copy assignement operator called\n";
+	if (this == &from)
+		return *this;
+	this->signature = from.signature;
+	return *this;
+}
 
 std::ostream	&operator<<(std::ostream& os, Form& from)
 {
